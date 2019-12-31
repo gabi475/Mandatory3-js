@@ -1,64 +1,65 @@
 $(document).ready(function() {
+
+  let pl_x = 0;
+  let box = $('.box');
   let x = "x";
   let o = "o";
   let turns = 0;
   let pl_o = 0;
-  let pl_x = 0;
-  let cell = $('.cell');
 
-  let space1 = $('#cell1');
-  let space2 = $('#cell2');
-  let space3 = $('#cell3');
-  let space4 = $('#cell4');
-  let space5 = $('#cell5');
-  let space6 = $('#cell6');
-  let space7 = $('#cell7');
-  let space8 = $('#cell8');
-  let space9 = $('#cell9');
+  let sitio1 = $('#box1');
+  let sitio2 = $('#box2');
+  let sitio3 = $('#box3');
+  let sitio4 = $('#box4');
+  let sitio5 = $('#box5');
+  let sitio6 = $('#box6');
+  let sitio7 = $('#box7');
+  let sitio8 = $('#box8');
+  let sitio9 = $('#box9');
 
   //----------vem vinner----funk.------------
-  $(cell).on('click', function() {
+  $(box).on('click', function() {
       // check rows-----
-    if (space1.hasClass("o") && space2.hasClass("o") && space3.hasClass("o") ||
-      space4.hasClass("o") && space5.hasClass("o") && space6.hasClass("o") ||
-      space7.hasClass("o") && space8.hasClass("o") && space9.hasClass("o") ||
+    if (sitio1.hasClass("o") && sitio2.hasClass("o") && sitio3.hasClass("o") ||
+      sitio4.hasClass("o") && sitio5.hasClass("o") && sitio6.hasClass("o") ||
+      sitio7.hasClass("o") && sitio8.hasClass("o") && sitio9.hasClass("o") ||
       // check columns
-      space1.hasClass("o") && space4.hasClass("o") && space7.hasClass("o") ||
-      space2.hasClass("o") && space5.hasClass("o") && space8.hasClass("o") ||
-      space3.hasClass("o") && space6.hasClass("o") && space9.hasClass("o") ||
+      sitio1.hasClass("o") && sitio4.hasClass("o") && sitio7.hasClass("o") ||
+      sitio2.hasClass("o") && sitio5.hasClass("o") && sitio8.hasClass("o") ||
+      sitio3.hasClass("o") && sitio6.hasClass("o") && sitio9.hasClass("o") ||
       // check diagonals
-      space1.hasClass("o") && space5.hasClass("o") && space9.hasClass("o") ||
-      space3.hasClass("o") && space5.hasClass("o") && space7.hasClass("o")) {
+      sitio1.hasClass("o") && sitio5.hasClass("o") && sitio9.hasClass("o") ||
+      sitio3.hasClass("o") && sitio5.hasClass("o") && sitio7.hasClass("o")) {
 
-      $(cell).text("");
-      $(cell).removeClass('disable');
-      $(cell).removeClass('o');
-      $(cell).removeClass('x');
+      $(box).text("");
+      $(box).removeClass('disable');
+      $(box).removeClass('o');
+      $(box).removeClass('x');
 
       // check rows-----
-    } else if (space1.hasClass("x") && space2.hasClass("x") && space3.hasClass("x") ||
-      space4.hasClass("x") && space5.hasClass("x") && space6.hasClass("x") ||
-      space7.hasClass("x") && space8.hasClass("x") && space9.hasClass("x") ||
+    } else if (sitio1.hasClass("x") && sitio2.hasClass("x") && sitio3.hasClass("x") ||
+      sitio4.hasClass("x") && sitio5.hasClass("x") && sitio6.hasClass("x") ||
+      sitio7.hasClass("x") && sitio8.hasClass("x") && sitio9.hasClass("x") ||
       // check columns
-      space1.hasClass("x") && space4.hasClass("x") && space7.hasClass("x") ||
-      space2.hasClass("x") && space5.hasClass("x") && space8.hasClass("x") ||
-      space3.hasClass("x") && space6.hasClass("x") && space9.hasClass("x") ||
+      sitio1.hasClass("x") && space4.hasClass("x") && sitio7.hasClass("x") ||
+      sitio2.hasClass("x") && sitio5.hasClass("x") && sitio8.hasClass("x") ||
+      sitio3.hasClass("x") && sitio6.hasClass("x") && sitio9.hasClass("x") ||
       // check diagonals
-      space1.hasClass("x") && space5.hasClass("x") && space9.hasClass("x") ||
-      space3.hasClass("x") && space5.hasClass("x") && space7.hasClass("x")) {
+      sitio1.hasClass("x") && space5.hasClass("x") && sitio9.hasClass("x") ||
+      sitio3.hasClass("x") && sitio5.hasClass("x") && sitio7.hasClass("x")) {
 
-      $(cell).text("");
-      $(cell).removeClass('disable');
-      $(cell).removeClass('o');
-      $(cell).removeClass('x');
+      $(box).text("");
+      $(box).removeClass('disable');
+      $(box).removeClass('o');
+      $(box).removeClass('x');
 
       //--------check if  space is filled------------
     } else if (turns === 9) {
       alert('Tie Game!');
-      $(cell).text("");
-      $(cell).removeClass('disable');
-      $(cell).removeClass('o');
-      $(cell).removeClass('x');
+      $(box).text("");
+      $(box).removeClass('disable');
+      $(box).removeClass('o');
+      $(box).removeClass('x');
       turns = 0;
     } else if ($(this).hasClass('disable')) {
       alert('This space is filled!');
@@ -69,24 +70,24 @@ $(document).ready(function() {
       $(this).addClass('disable o');
 
         // check rows-----
-      if (space1.hasClass("o") && space2.hasClass("o") && space3.hasClass("o") ||
-        space4.hasClass("o") && space5.hasClass("o") && space6.hasClass("o") ||
-        space7.hasClass("o") && space8.hasClass("o") && space9.hasClass("o") ||
+      if (sitio1.hasClass("o") && sitio2.hasClass("o") && sitio3.hasClass("o") ||
+        sitio4.hasClass("o") && sitio5.hasClass("o") && sitio6.hasClass("o") ||
+        sitio7.hasClass("o") && sitio8.hasClass("o") && sitio9.hasClass("o") ||
         // check columns
-        space1.hasClass("o") && space4.hasClass("o") && space7.hasClass("o") ||
-        space2.hasClass("o") && space5.hasClass("o") && space8.hasClass("o") ||
-        space3.hasClass("o") && space6.hasClass("o") && space9.hasClass("o") ||
+        sitio1.hasClass("o") && space4.hasClass("o") && sitio7.hasClass("o") ||
+        sitio2.hasClass("o") && sitio5.hasClass("o") && sitio8.hasClass("o") ||
+        sitio3.hasClass("o") && sitio6.hasClass("o") && sitio9.hasClass("o") ||
         // check diagonals
-        space1.hasClass("o") && space5.hasClass("o") && space9.hasClass("o") ||
-        space3.hasClass("o") && space5.hasClass("o") && space7.hasClass("o")) {
+        sitio1.hasClass("o") && space5.hasClass("o") && sitio9.hasClass("o") ||
+        sitio3.hasClass("o") && sitio5.hasClass("o") && sitio7.hasClass("o")) {
 
         alert('Winner: o');
         pl_o++;
         $('.player_1').text(pl_o);
-        $(cell).text("");
-        $(cell).removeClass('disable');
-        $(cell).removeClass('o');
-        $(cell).removeClass('x');
+        $(box).text("");
+        $(box).removeClass('disable');
+        $(box).removeClass('o');
+        $(box).removeClass('x');
         turns = 0;
       }
 
@@ -96,24 +97,24 @@ $(document).ready(function() {
       $(this).addClass('disable x');
 
         // check rows-----
-      if (space1.hasClass("x") && space2.hasClass("x") && space3.hasClass("x") ||
-        space4.hasClass("x") && space5.hasClass("x") && space6.hasClass("x") ||
-        space7.hasClass("x") && space8.hasClass("x") && space9.hasClass("x") ||
+      if (sitio1.hasClass("x") && sitio2.hasClass("x") && sitio3.hasClass("x") ||
+        sitio4.hasClass("x") && sitio5.hasClass("x") && sitio6.hasClass("x") ||
+        sitio7.hasClass("x") && sitio8.hasClass("x") && sitio9.hasClass("x") ||
         // check columns
-        space1.hasClass("x") && space4.hasClass("x") && space7.hasClass("x") ||
-        space2.hasClass("x") && space5.hasClass("x") && space8.hasClass("x") ||
-        space3.hasClass("x") && space6.hasClass("x") && space9.hasClass("x") ||
+        sitio1.hasClass("x") && sitio4.hasClass("x") && sitio7.hasClass("x") ||
+        sitio2.hasClass("x") && sitio5.hasClass("x") && sitio8.hasClass("x") ||
+        sitio3.hasClass("x") && sitio6.hasClass("x") && sitio9.hasClass("x") ||
         // check diagonals
-        space1.hasClass("x") && space5.hasClass("x") && space9.hasClass("x") ||
-        space3.hasClass("x") && space5.hasClass("x") && space7.hasClass("x")) {
+        sitio1.hasClass("x") && sitio5.hasClass("x") && sitio9.hasClass("x") ||
+        sitio3.hasClass("x") && sitio5.hasClass("x") && sitio7.hasClass("x")) {
 
         alert('Winner: x');
         pl_x++;
-        $('.player_2').text(pl_x);
-        $(cell).text("");
-        $(cell).removeClass('disable');
-        $(cell).removeClass('o');
-        $(cell).removeClass('x');
+        $('.gamer_2').text(pl_x);
+        $(box).text("");
+        $(box).removeClass('disable');
+        $(box).removeClass('o');
+        $(box).removeClass('x');
         turns = 0;
       }
     }
@@ -121,15 +122,15 @@ $(document).ready(function() {
 
   //---------------Reset----------------
   $('#button').click(function(e) {
-    $(cell).text("");
-    $(cell).removeClass('disable');
-    $(cell).removeClass('o');
-    $(cell).removeClass('x');
+    $(box).text("");
+    $(box).removeClass('disable');
+    $(box).removeClass('o');
+    $(box).removeClass('x');
     turns = 0;
     pl_o = 0;
     pl_x = 0;
-    $('.player_2').text("0");
-    $('.player_1').text("0");
+    $('.gamer_2').text("0");
+    $('.gamer_1').text("0");
   });
 
 });
